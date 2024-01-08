@@ -1,6 +1,6 @@
-var expect = require('chai').expect;
-var sinon  = require('sinon');
-var logStream = require('./../lib/logStream');
+const expect = require('chai').expect;
+const sinon  = require('sinon');
+const logStream = require('./../lib/logStream');
 
 /**
  * test for the logStream
@@ -12,7 +12,7 @@ describe('LogStream', function () {
         it('should throw a error because no mongoose model is provided', function (done) {
 
             try {
-                var newLog = logStream();
+                const newLog = logStream();
                 done('Should not pass');
             } catch (e) {
                 expect(e.message).to.equal('[LogStream] - Fatal Error - No mongoose model provided!');
@@ -22,7 +22,7 @@ describe('LogStream', function () {
         });
 
         it('should create a logStream instance', function (done) {
-            var newLog = logStream({model : {}});
+            const newLog = logStream({model : {}});
             done();
         });
 
@@ -32,7 +32,7 @@ describe('LogStream', function () {
 
     describe('_write - method', function () {
 
-        var modelStub, saveStub;
+        let modelStub, saveStub;
 
         beforeEach(function (done) {
             modelStub = sinon.stub();
@@ -43,7 +43,7 @@ describe('LogStream', function () {
 
         it('should call the save method of the mongoose model', function (done) {
 
-            var newLog = logStream({model : modelStub});
+            const newLog = logStream({model : modelStub});
 
             newLog._write(new Buffer('{"msg" : "test"}'),'UTF-8', function () {
                
