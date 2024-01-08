@@ -91,8 +91,3 @@ const logger = bunyan.createLogger({
 ```
 
 * Use the logger as you already do.
-
-# Further Reading
-
-* For more details about the bunyan logger go to the github account: https://github.com/trentm/node-bunyan.
-* A little gist with a different implementation: https://gist.github.com/oroce/4052571
