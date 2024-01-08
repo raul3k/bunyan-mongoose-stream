@@ -33,13 +33,13 @@ a validation error.
 ```javascript
 
 'use strict';
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 /**
  * The schema of the log entry
  * @type {Mongoose.Schema}
  */
-var LogEntrySchema = new mongoose.Schema({
+const LogEntrySchema = new mongoose.Schema({
     msg: {
         type: String,
         required: true
@@ -64,21 +64,21 @@ var LogEntrySchema = new mongoose.Schema({
     }
 });
 
-var LogEntryModel = mongoose.model('Log', LogEntrySchema);
+const LogEntryModel = mongoose.model('Log', LogEntrySchema);
 ```
 * Require and initialize the bunyan-mongodb-stream package.
 
 ```javascript
-var LogEntryStream = require('bunyan-mongodb-stream')({model: LogEntryModel});
+const LogEntryStream = require('bunyan-mongodb-stream')({model: LogEntryModel});
 ```
 
 * Set up the bunyan logger and add the LogEntryStream to the streams array.
 
 ```javascript
 
-var bunyan = require('bunyan');
+const bunyan = require('bunyan');
 
-var logger = bunyan.createLogger({
+const logger = bunyan.createLogger({
     name: 'YourLogger',
     streams: [
         {
