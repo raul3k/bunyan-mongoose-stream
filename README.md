@@ -1,6 +1,6 @@
 # Bunyan MongoDB Stream
 
-[![Build Status](https://travis-ci.org/traedamatic/bunyan-mongodb-stream.svg?branch=master)](https://travis-ci.org/traedamatic/bunyan-mongodb-stream)
+**This is a fork of (https://github.com/traedamatic/bunyan-mongodb-stream)[bunyan-mongodb-stream], the original doesn't have compatibility with mongoose >=6, so I created this module based on the original.** 
 
 A stream implementation for the bunyan logger (https://github.com/trentm/node-bunyan). All log entries will be saved directly to your mongodb
 instance. It is a very lower level implementation and has no external dependencies.
@@ -10,17 +10,17 @@ instance. It is a very lower level implementation and has no external dependenci
 # Install
  
 ```
-npm install bunyan-mongodb-stream
+npm install bunyan-mongoose-stream
 ```
 or
 
 ```
-npm install bunyan-mongodb-stream --save
+npm install bunyan-mongoose-stream --save
 ```
 
 # How To
 
-* Install the npm bunyan-mongodb-stream package. ;)
+* Install the npm bunyan-mongoose-stream package. ;)
 * First to need to create a mongoose model. The package does not include a default model because the schema of the log-entry model may differ
 from every use-case the logger will be used. You can add customer fields to mongodb document, just add the field to the schema and pass it to the bunyan logger. More information 
 custom fields look here: https://github.com/trentm/node-bunyan#log-method-api. The example model includes two custom fields req and res. It is
@@ -66,7 +66,7 @@ const LogEntrySchema = new mongoose.Schema({
 
 const LogEntryModel = mongoose.model('Log', LogEntrySchema);
 ```
-* Require and initialize the bunyan-mongodb-stream package.
+* Require and initialize the bunyan-mongoose-stream package.
 
 ```javascript
 const LogEntryStream = require('bunyan-mongodb-stream')({model: LogEntryModel});
