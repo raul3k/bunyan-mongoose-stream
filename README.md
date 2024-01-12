@@ -1,4 +1,4 @@
-# Bunyan MongoDB Stream
+# Bunyan Mongoose Stream
 
 **This is a fork of (https://github.com/traedamatic/bunyan-mongodb-stream)[bunyan-mongodb-stream], the original doesn't have compatibility with mongoose >=6, so I created this module based on the original.** 
 
