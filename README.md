@@ -1,8 +1,8 @@
 # Bunyan Mongoose Stream
 
-**This is a fork of (https://github.com/traedamatic/bunyan-mongodb-stream)[bunyan-mongodb-stream], the original doesn't have compatibility with mongoose >=6, so I created this module based on the original.** 
+**This is a fork of (https://github.com/traedamatic/bunyan-mongodb-stream) the original doesn't have compatibility with mongoose >=6, so I created this module based on the original.** 
 
-A stream implementation for the bunyan logger (https://github.com/trentm/node-bunyan). All log entries will be saved directly to your mongodb
+A stream implementation for the bunyan logger https://github.com/trentm/node-bunyan. All log entries will be saved directly to your mongodb
 instance. It is a very lower level implementation and has no external dependencies.
 
 **The implementation requires a mongoose model for saving the log-data in the mongodb instance.**
